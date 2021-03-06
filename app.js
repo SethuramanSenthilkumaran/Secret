@@ -6,6 +6,7 @@ const ejs = require("ejs");
 const mongoose = require("mongoose");
 const md5 = require("md5");
 
+
 const app = express();
 
 app.use(express.static("public"));
@@ -18,7 +19,6 @@ const userSchema = new mongoose.Schema({
   email: String,
   password: String
 });
-
 
 
 const User = new mongoose.model("User", userSchema);
@@ -67,8 +67,6 @@ app.post("/login", function(req, res){
     }
   });
 });
-
-
 
 
 app.listen(3000, function(){
