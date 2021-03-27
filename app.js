@@ -9,6 +9,7 @@ const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 
 
+
 const app = express();
 
 app.use(express.static("public"));
@@ -33,6 +34,7 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.plugin(passportLocalMongoose);
+
 
 const User = new mongoose.model("User", userSchema);
 
@@ -99,8 +101,6 @@ app.post("/login", function(req, res){
   });
 
 });
-
-
 
 
 app.listen(3000, function(){
